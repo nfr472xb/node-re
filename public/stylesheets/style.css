@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 微軟正黑體;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.nav-wrapper, .page-footer{
+    background-color: #26c6da !important;
+  }
+
+
+li {font-weight: 600;}
+
+.posts {
+  background: white;
+  padding: 2em 0;
+  margin: 1.5em 0;
+  
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.user-container {
+  margin-left:3em;
+}
+.location-container {
+  margin-left:3em;
+}
+.tag-container {
+  margin-left:3em;
+}
+
+.add-file-container {
+  min-height: 60%;
+}
+
+
+.card-image
+{
+
+  max-height: 256px;
+  max-width: 350px;
+  width: 100%;
+}
+
+
+#postPhoto  {
+
+  max-height: 256px;
+  max-width: 350px;
+  width: 100%;
+}
+
+.card
+
+{height: 370px;}
+
+
+.brand-logo {
+  padding-left: 50px !important;
+}
+
+
+ @media only screen and (max-width: 902px) {
+
+
+  
+.brand-logo {
+  padding-left: 0px !important;
+}
+
+ }
+

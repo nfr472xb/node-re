@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<%- include header %>
+
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<% if(!auth){ %>
+	<%- include nav-notlogin.ejs %>
+<% } %>
+
+<% if(auth){ %>
+	<%- include nav %>
+<% } %>
+
+
+
+<body>
+	
+
+	<div id="map-canvas" style="width:100%; height:200px; display:none;"></div>
+
+
+
+		
+
+	<div class="container">
+
+			<div class="row center" id="card-container">
+			</div>
+		</div>
+
+
+
+</body>
+</html>
