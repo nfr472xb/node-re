@@ -11,7 +11,7 @@ router.post('/', function (req, res) {
         return res.redirect('/');  
     } else {
             fireData.ref('post').push({
-                authorr: req.session.uid, 
+                author: req.session.uid, 
                 location: req.body.Locationcontent
             }).then(function () {
                     res.redirect('/');
