@@ -10,49 +10,6 @@ window.onload = () => {
   };
   firebase.initializeApp(config);
 
-
-   
-    // index START
-    var cardContainer = document.getElementById('card-container');
-
-    if (cardContainer) {
-        var postRef = firebase.database().ref('post');
-
-        postRef.once('value', snapshot => {
-            var allcard = '';
-            snapshot.forEach(data => {
-
-                console.log(data.val().tag)
-                var card = `<div class="col s12 m6 l4">
-                <div class="card hoverable">
-                  <div class="card-image">
-                    <img id="postPhoto" src="${data.val().photo}">
-                  </div>
-                  <div class="card-content">
-                    <p>
-                      <span id="postAuthor">
-                      <a href="/users/${data.val().author}">${data.val().email}</a>
-                      
-                      </span>
-                      <br />
-                      <span id="postLocation">
-                        <i class="material-icons">location_on</i>
-                        <a href="/location/${data.val().location}">${data.val().location}</a>
-                      </span>
-                      <br>
-                   
-                    </p>
-                  </div>
-                </div>
-              </div>`
-                    ;
-                allcard += card;
-            })
-            cardContainer.innerHTML = allcard;
-        })
-    }
-    // index END
-
     // fileUpload START
     var file;
 
