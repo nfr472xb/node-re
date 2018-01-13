@@ -13,8 +13,8 @@ router.get('/', function(req, res) {
   var auth = req.session.uid;
   
   var userName = auth ? req.session.mail : '訪客';
-    res.render('upload', {
-      title: '上傳',
+    res.render('single', {
+      title: '單篇文章',
       name: userName,
       errors: req.flash('errors')
   });

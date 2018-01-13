@@ -31,6 +31,7 @@ var login = require('./routes/login');
 var doup = require('./routes/doup');
 var signIn = require('./routes/signIn');
 var upload = require('./routes/upload');
+var single = require('./routes/single');
 
 
 var user = require('./routes/user');
@@ -38,6 +39,7 @@ app.use('/', routes);
 app.use('/login', login);
 app.use('/signIn', signIn);
 app.use('/upload', upload);
+app.use('/single', single);
 // check login
 app.use(function (req, res, next) {
   if (req.session.uid) {
