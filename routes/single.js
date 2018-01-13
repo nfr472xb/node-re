@@ -9,16 +9,19 @@ var fireData = require("./service/fireData");
 
 router.get('/', function(req, res) {
   
-  
-  var auth = req.session.uid;
-  
+  var auth = req.session.uid; 
   var userName = auth ? req.session.mail : '訪客';
+  var videoName = req.params.name+req.params.id;
+  var pid = req.query.q;
+
+  fireData.ref('post').once('value', function (snapshopt) {
     res.render('single', {
       title: '單篇文章',
       name: userName,
-      errors: req.flash('errors')
+      errors: req.flash('errors'),
+      single: snapshopt.val()
   });
-
+})
 
 
   })

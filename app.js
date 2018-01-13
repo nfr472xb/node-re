@@ -33,6 +33,9 @@ var signIn = require('./routes/signIn');
 var upload = require('./routes/upload');
 var single = require('./routes/single');
 
+var docomment = require('./routes/docomment');
+
+
 
 var user = require('./routes/user');
 app.use('/', routes);
@@ -49,6 +52,7 @@ app.use(function (req, res, next) {
 });
 app.use('/user', user);
 app.use('/doup', doup);
+app.use('/docomment', docomment);
 
 
 app.get('/out', function(req, res){
@@ -62,6 +66,8 @@ app.use(function (req, res, next) {
   err.status = 404;
   next(err);
 });
+
+
 
 // error handlers
 
