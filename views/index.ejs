@@ -40,15 +40,12 @@
 							<a href="/single/<%= post[item].postid %>">
 									<img src="<%= post[item].photo %>" class="responsive-img" alt="">
 							</a>
-
-							<span id="postAuthor">
-									<a href="/users/${data.val().author}"><%= post[item].author %> </a>	
-									</span>
-							<span id="postLocation">
-											<i class="material-icons">location_on</i>
-											<a href="/location/${data.val().location}"><%= post[item].location %> </a>
-										  </span>		
 						  </div>
+				
+						<span id="postLocation">
+										<i class="material-icons">location_on</i>
+										<a href="/location/${data.val().location}"><%= post[item].location %> </a>
+									  </span>	
 						</div>
 					</div>
 
