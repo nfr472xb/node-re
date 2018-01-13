@@ -12,22 +12,21 @@
 <body>
 	
 		<div class="container">
-	<form action="/doup" method="post">
-	<input type="text" id='autocompleteLocation'name='Locationcontent' placeholder="選擇地點">
-	<div id="map-canvas" style="width:100%; height:200px; display:none;"></div>
-
-	<button type="submit" name="btn_login" class="col s12 btn btn-large waves-effect cyan lighten-2" style="font-size: 25px;font-weight:  600; ">       
-			上傳<i class="material-icons right">send</i>                                  
-	</button>  
-	</form>
+			<form action="/comment" method="post">
+				<input type="text" name="content" placeholder="填寫留言訊息">
+				<input type="hidden" name="postid" value="<%= postid %>" >			
+				<input type="hidden" name="name" value="<%= name %>" >
+				<input type="submit" valut="送出">
+				<%= errors %>
+			</form>
 
 
 
 
 <% for(item in single){ %>
     <li>
-        <%= single[item].author %>
-        <%= single[item].location %>
+		<%= single[item].user %> : <%= single[item].comment %>
+        
     </li>
 <% }; %>
 

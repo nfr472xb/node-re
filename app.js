@@ -32,7 +32,7 @@ var doup = require('./routes/doup');
 var signIn = require('./routes/signIn');
 var upload = require('./routes/upload');
 var single = require('./routes/single');
-
+var comment = require('./routes/comment');
 var docomment = require('./routes/docomment');
 
 
@@ -43,6 +43,11 @@ app.use('/login', login);
 app.use('/signIn', signIn);
 app.use('/upload', upload);
 app.use('/single', single);
+app.use('/user', user);
+app.use('/doup', doup);
+app.use('/comment', comment);
+app.use('/docomment', docomment);
+
 // check login
 app.use(function (req, res, next) {
   if (req.session.uid) {
@@ -50,9 +55,6 @@ app.use(function (req, res, next) {
   }
   res.redirect('/');
 });
-app.use('/user', user);
-app.use('/doup', doup);
-app.use('/docomment', docomment);
 
 
 app.get('/out', function(req, res){

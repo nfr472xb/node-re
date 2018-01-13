@@ -6,20 +6,21 @@ var fireData = require("./service/fireData");
 /* GET home page. */
 
 
-
-router.get('/', function(req, res) {
+router.get('/:postid', function(req, res) {
   
   var auth = req.session.uid; 
   var userName = auth ? req.session.mail : '訪客';
   var videoName = req.params.name+req.params.id;
-  var pid = req.query.q;
 
-  fireData.ref('post').once('value', function (snapshopt) {
+
+  
+  fireData.ref('comment/'+req.param("postid")).once('value', function (snapshopt) {
     res.render('single', {
       title: '單篇文章',
       name: userName,
       errors: req.flash('errors'),
-      single: snapshopt.val()
+      single: snapshopt.val(),
+      postid:req.param("postid")
   });
 })
 
