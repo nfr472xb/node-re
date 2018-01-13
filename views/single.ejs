@@ -8,7 +8,14 @@
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
-<%- include nav %>
+<% if(!auth){ %>
+	<%- include nav-notlogin.ejs %>
+<% } %>
+
+<% if(auth){ %>
+	<%- include nav %>
+<% } %>
+
 <body>
 	
 		<div class="container">
@@ -22,13 +29,12 @@
 
 
 
-
 <% for(item in single){ %>
-    <li>
-		<%= single[item].user %> : <%= single[item].comment %>
-        
+    <li></li>
+		<%= single[item].user %> : <%= single[item].comment %>     
     </li>
 <% }; %>
+
 
 
 

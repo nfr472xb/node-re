@@ -6,6 +6,9 @@ var fireData = require("./service/fireData");
 /* GET home page. */
 
 
+
+ 
+
 router.get('/:postid', function(req, res) {
   
   var auth = req.session.uid; 
@@ -13,14 +16,15 @@ router.get('/:postid', function(req, res) {
   var videoName = req.params.name+req.params.id;
 
 
-  
+
   fireData.ref('comment/'+req.param("postid")).once('value', function (snapshopt) {
     res.render('single', {
       title: '單篇文章',
       name: userName,
       errors: req.flash('errors'),
       single: snapshopt.val(),
-      postid:req.param("postid")
+      postid:req.param("postid"),
+      auth:auth
   });
 })
 
